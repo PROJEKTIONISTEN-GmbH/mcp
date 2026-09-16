@@ -1,0 +1,14 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "eu.projektionisten/mobility",
+  "title": "MobilityMCP",
+  "description": "Public transport across Germany: journeys, departures, line courses and disruption reports.",
+  "version": "0.1.0",
+  "websiteUrl": "https://ai.projektionisten.eu/mcp-landingpage/",
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://ai.projektionisten.eu/mmcp"
+    }
+  ]
+}

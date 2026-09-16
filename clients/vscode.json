@@ -1,0 +1,12 @@
+{
+  "servers": {
+    "mobilitymcp": {
+      "type": "http",
+      "url": "https://ai.projektionisten.eu/mmcp"
+    },
+    "tourismmcp": {
+      "type": "http",
+      "url": "https://ai.projektionisten.eu/tmcp"
+    }
+  }
+}

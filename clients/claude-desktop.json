@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "mobilitymcp": {
+      "command": "npx",
+      "args": ["-y", "mcp-remote", "https://ai.projektionisten.eu/mmcp"]
+    },
+    "tourismmcp": {
+      "command": "npx",
+      "args": ["-y", "mcp-remote", "https://ai.projektionisten.eu/tmcp"]
+    }
+  }
+}
