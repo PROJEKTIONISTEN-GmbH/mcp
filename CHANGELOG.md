@@ -17,6 +17,10 @@ The first entry records a change made before this file existed, and therefore
 carries the version the two servers were already published under. From the next
 entry on, the number moves with the rule above.
 
+## 2026-09-17 — MobilityMCP 0.1.0
+
+- removed: `show_connections`, `show_departures`, `show_connections_slim`
+
 ## 2026-09-16 — MobilityMCP 0.1.0
 
 - arguments changed: `search_place`, `reverse_geocode`

@@ -2,7 +2,7 @@
 
 <!-- tools:begin (generated from the server's tools/list) -->
 
-Generated from the `tools/list` of `https://ai.projektionisten.eu/mmcp` — 13 tools.
+Generated from the `tools/list` of `https://ai.projektionisten.eu/mmcp` — 10 tools.
 
 Every description below is the one the server sends; it is what your agent reads before it picks a tool. The tool descriptions are German, because the data they answer with is.
 
@@ -185,112 +185,5 @@ Die ausführliche Anleitung zu den Werkzeugen dieses Katalogs: wofür ein Werkze
 | Argument | Required | Type | Description |
 |---|---|---|---|
 | `tool` | no | string | Der Name genau eines Werkzeugs aus diesem Katalog, dessen Abschnitt zurückkommen soll. Weglassen für die ganze Anleitung. |
-
-## Verbindung anzeigen — `show_connections`
-
-*read-only · not destructive · answers from live outside data*
-
-**Der Vordereingang für jede Verbindungsfrage eines Menschen**, auch wenn er nur nach Zeiten fragt: plant die Fahrt wie `connections` und liefert sie zusätzlich als Ansicht aus, die ein Wirt mit Ansichten dem Nutzer zeigt — je Verbindung eine Karte mit Zeiten, Dauer, Umstiegen und Echtzeit-Lage. **Beantwortest du einem Menschen eine Verbindungsfrage, ruf dies statt `connections`**, das für Ergebnisse ist, die du weiterverarbeitest. **Pflicht sind BEIDE Endpunkte**, wie dort: `origin_id` UND `destination_id` — oder die vier Koordinaten-Felder; `render_payload` entfällt. Der Antwort-Text ist der von `connections`; die Rohdaten daneben tragen nur die Felder, die die Ansicht zeichnet, ihr Kartenverlauf davon im `_meta`. **Anleitung**: `get_usage_guide` mit `tool='connections'`. **Anti-Fab**: Linien, Zeiten, Halte und Gleise ausschließlich aus dem Output dieses Aufrufs.
-
-| Argument | Required | Type | Description |
-|---|---|---|---|
-| `accessibility_profile` | no | string | Mobility profile by name: `"Standard"` (default), `"WheelchairRobust"`, `"WalkerComfort"` or `"IndividualComfort"`. Each bundles its accessibility constraints and walk speed; another name is an argument error. The two wheelchair profiles find no ride at all today — the answer then carries `accessibility_routing` with `status: no_data` beside ordinary connections, which are to be reported as ordinary ones. What each profile constrains is in the usage guide. |
-| `cycling_profile` | no | string | Wer auf dem Rad sitzt, und damit das Tempo der Rad-Abschnitte: `family` (mit kleinen Kindern), `normal` (Default, unverändert) oder `ebike` (Pedelec). Ein anderer Name ist ein Argument-Fehler. |
-| `cycling_speed` | no | number | Rad-Tempo in Metern/Sekunde, 1 bis 12 — außerhalb ein Argument-Fehler. Überschreibt `cycling_profile`. Richtwerte: Familie ≈2.8, normal ≈5, Pedelec ≈6.5. |
-| `destination_id` | no | string | Destination id. Same form as `origin_id`. |
-| `destination_lat` | no | number | Destination latitude. Same use as `origin_lat`. |
-| `destination_lon` | no | number | Destination longitude. Goes with `destination_lat`. |
-| `destination_type` | no | string | What `destination_id` is. Same values as `origin_type`. |
-| `exclude_lines` | no | array | Line blacklist, same token form as `only_lines`. A journey is dropped if any transit leg uses one of them. |
-| `extended` | no | boolean | `true` keeps the map data in the text: every stop's coordinate, every leg's polyline, and the whole stop sequence with them — for an application that DRAWS the route, at two to three times the answer. A chat client leaves it off. |
-| `format` | no | string | Answer serialisation: `"toon"` (default) or `"json"` — the detail is in `get_usage_guide`. **An agent leaves this out.** |
-| `include_rental_bike` | no | boolean | `true` adds a rental-bike leg (park-and-bike / station rental). Equivalent to naming `"bike"` in `modes` together with a transit mode. |
-| `is_arrival_time` | no | boolean | `true` reads `time` as the desired ARRIVAL time instead of the departure time. |
-| `limit` | no | integer | Maximum number of journeys, at least 1. Default 5, values above 15 are served as 15. |
-| `max_transfers` | no | integer | Upper bound on interchanges: `0` = direct, up to `3`. Omit unless the user constrains transfers: the backend then derives the search depth from the trip's air-line distance and escalates it when the first attempt finds nothing, so omitting never loses a connection. |
-| `max_walk_meters` | no | integer | Cap on the summed walking DISTANCE in metres. Works like `max_walk_minutes`, on the metres walked. |
-| `max_walk_minutes` | no | integer | Cap on the summed walking TIME in minutes. A post-filter drops journeys above it; if that leaves nothing, the backend searches once more avoiding footpaths before the answer is empty. |
-| `mobility_profile` | no | string | How the first and the last mile may be covered, by name: `"transit"` (default — both ends on foot), `"transit_plus_sharing"` (a shared bike), `"door_to_door"` (being driven), `"park_and_ride"` or `"bike_and_ride"` (one's OWN car or bicycle, left where the transit leg starts). Another name is an argument error. It widens those two ends, restricts no ride and promises nothing. When to set which, and how it composes with `modes`, is in the usage guide. |
-| `modes` | no | array | Transport-mode restriction, not a preference: nothing outside the list is planned. The footpath always stays allowed — the way to, from and between stops goes on foot — while `["foot"]` on its own plans no ride at all. Entries: `"bike"`, `"bike_rental"`, `"foot"`, `"car"`, `"taxi"`, `"scooter"`, `"transit"`, `"bus"`, `"tram"`, `"rail"`, `"subway"`, `"ferry"`; several combine. An entry outside that list is an argument error, not a dropped filter. Omitted or empty = all standard transit modes, the ferry included. Set only when the user insists on a mode; the guide has the vocabulary and the traps. |
-| `only_lines` | no | array | Line whitelist. Entries are line tokens as printed on the vehicle (`"6"`, `"U3"`); a journey is kept only if every transit leg uses one of them. |
-| `origin_id` | no | string | Origin id. A DHID (`de:NNNNN:NNN`) for a stop, otherwise the resolver's `main` id of the address or POI. Resolve the place first — a name here is an argument error. |
-| `origin_lat` | no | number | Origin latitude, WGS-84 decimal degrees — the fallback when no id is at hand, and the one retry worth making when resolved ids find nothing. |
-| `origin_lon` | no | number | Origin longitude. Goes with `origin_lat`. |
-| `origin_type` | no | string | What `origin_id` is: `"stop"` (default), `"address"` or `"poi"`. A stop id is auto-prefixed `GTFS.de:`; the other two are forwarded verbatim so the backend resolves the real name. |
-| `prefer_flat` | no | boolean | `true` plant die hügel-ärmste statt der sonst gewählten Rad-Route: die Suche gewichtet die Steigung und nimmt dafür Umwege in Kauf, nur auf Rad-Abschnitten. Keine Zusage — ohne flachere Alternative kommt dieselbe Route; die Höhenmeter der Antwort sagen es. Wann setzen: die Anleitung. |
-| `submodes_allow` | no | array | Fine submode whitelist — finer than `modes`, which only separates bus/tram/rail/subway. Entries: `"sbahn"`, `"regionalbahn"`, `"ice"`, `"ic"`, `"ir"`, `"nj"`, `"fernverkehr"`, `"stadtbahn"`, `"ubahn"`, `"bus"`, `"regionalbus"`, `"stadtbus"`. A journey is kept only if every transit leg matches one. |
-| `submodes_deny` | no | array | Fine submode blacklist, same vocabulary as `submodes_allow`. A journey is dropped if any transit leg matches one. |
-| `time` | no | string | ISO 8601 timestamp (e.g. `"2026-06-15T08:30:00Z"`). Omit to plan from now. Resolve a spoken time with the time tool rather than computing one. |
-| `verbosity` | no | string | How much of each journey comes back: `"compact"` (default — everything an answer is cited from) or `"full"` (adds the stops in between). A third word is an argument error, not the default. |
-| `via_id` | no | string | Intermediate stop the route must pass through („über X"), as an id in the same form as `origin_id`. The route is then planned A → via → B. |
-| `via_lat` | no | number | Via latitude, for an intermediate address or POI without an id. Goes with `via_lon`. |
-| `via_lon` | no | number | Via longitude. Goes with `via_lat`. |
-| `via_type` | no | string | What `via_id` is. Same values as `origin_type`. |
-| `walk_speed` | no | number | Walking speed of the foot legs in metres/second, between 0.3 and 3 m/s — outside that it is an argument error. Default ≈1.33, slow ≈0.7, brisk ≈2.0. Overrides the walk speed of `accessibility_profile`. |
-
-## Abfahrtstafel anzeigen — `show_departures`
-
-*read-only · not destructive · answers from live outside data*
-
-**Der Vordereingang für jede Abfahrtsfrage eines Menschen**: liest die Tafel einer Haltestelle wie `departures` und liefert sie zusätzlich als Ansicht aus, die ein Wirt mit Ansichten dem Nutzer zeigt — je Abfahrt Linie, Ziel, Gleis/Steig, Zeit und Echtzeit-Lage. **Beantwortest du einem Menschen eine Abfahrtsfrage, ruf dies statt `departures`**, das für Ergebnisse ist, die du weiterverarbeitest. **Pflicht ist die Halte-Id**, wie dort: `id` — eine Id aus `resolve_location`, kein Haltestellen-Name; `render_payload` entfällt. Der Antwort-Text ist der von `departures`; die Rohdaten daneben tragen nur die Felder, die die Ansicht zeichnet. **Anleitung**: `get_usage_guide` mit `tool='departures'`. **Anti-Fab**: Linien, Ziele, Zeiten und Gleise ausschließlich aus dem Output dieses Aufrufs.
-
-| Argument | Required | Type | Description |
-|---|---|---|---|
-| `arrival_departure` | no | string | `"arrivals"` (when vehicles reach `id`) or `"departures"` (default) — a third value is an argument error. Wins over `is_arrival_time` when both are set. |
-| `bearing_tolerance` | no | number | Angular tolerance in degrees for `target_bearing`. Default ±60°. |
-| `direction` | no | string | Name of a stop the user wants to head TOWARD („Richtung Wettbergen") — not a routing destination. The board keeps only departures heading that way, whether the named stop is the terminus or a stop downstream of the queried one. Matching is case-insensitive and area-prefix-tolerant. |
-| `extended` | no | boolean | `true` keeps the map data in the text: every stop's coordinate, the whole course of each run, and a polyline where the board carries one — for an application that DRAWS the board. It multiplies the answer. A chat client leaves it off. |
-| `format` | no | string | Answer serialisation: `"toon"` (default) or `"json"` — the detail is in `get_usage_guide`. **An agent leaves this out.** |
-| `id` | yes | string | Stop id to read the board of, as a DHID (`"de:03241:57"`). Resolve the stop first — a name here is an argument error. |
-| `is_arrival_time` | no | boolean | `true` reads `time` as an ARRIVAL time — the same as `arrival_departure = "arrivals"`. |
-| `last_of_window` | no | boolean | Which end of a `time_range_seconds` window to read: omitted or `false` the FIRST departures, `true` the LAST ones (the end-of-service question). An answer carrying `window_truncated: true` beside its board did NOT reach the window's end — its last entry is then not the last departure. Without a window it has no effect. |
-| `limit` | no | integer | Maximum number of departures, at least 1. Default 5, values above 15 are served as 15. |
-| `modes` | no | array | Transport-mode filter; the board then shows nothing else. Entries: `"bus"`, `"tram"`, `"subway"`, `"train"`/`"rail"`, `"ferry"`, `"transit"`; several combine. Another entry — a street mode, a misspelling — is an argument error, not a dropped filter: a board lists scheduled services. Omitted or empty = all modes. A Stadtbahn or light-rail mention needs BOTH labels — `["tram","subway"]`: which of the two such a network carries depends on the dataset rather than on the vehicle. Set the filter only when the user really asks for a vehicle type; the guide has the rest of the vocabulary and the traps. |
-| `target_bearing` | no | number | Target bearing in degrees (0=N, 90=E, 180=S, 270=W) for a SOFT direction („Richtung Norden", „Richtung Stadt") instead of a stop name. The board keeps only departures whose course lies within `bearing_tolerance` of it. Mutually exclusive with `direction`. |
-| `time` | no | string | ISO 8601 timestamp (e.g. `"2026-06-15T08:30:00Z"`). Omit for now. Resolve a spoken time with the time tool rather than computing one. |
-| `time_range_seconds` | no | integer | Time WINDOW in seconds, starting at `time`. Together with `last_of_window` this answers „letzte Fahrt": pick it so the window ENDS after end of service (from the evening on, `28800` = 8 h rather than 4 h). Omit for a normal next-N lookup. |
-| `verbosity` | no | string | How much of each departure comes back: `"compact"` (default — everything an answer is cited from) or `"full"` (adds the onward stops of the run, and with them the per-stop cancellation marker). A third word is an argument error, not the default. |
-
-## Verbindung schlank anzeigen — `show_connections_slim`
-
-*read-only · not destructive · answers from live outside data*
-
-**Dieselbe Verbindungs-Ansicht wie `show_connections`, nur schlank ausgeliefert**: das Kartenwerk lädt die Ansicht als Skript, statt es mitzubringen. **Nimm dies nur, wenn ausdrücklich nach der schlanken Auslieferung gefragt wird** — sonst `show_connections`. Sonst unverändert: plant die Fahrt wie `connections` und liefert sie zusätzlich als Ansicht aus. **Pflicht sind BEIDE Endpunkte**, wie dort: `origin_id` UND `destination_id` — oder die vier Koordinaten-Felder; `render_payload` entfällt. Der Antwort-Text ist der von `connections`; die Rohdaten daneben tragen nur die Felder, die die Ansicht zeichnet, ihr Kartenverlauf davon im `_meta`. **Anleitung**: `get_usage_guide` mit `tool='connections'`. **Anti-Fab**: Linien, Zeiten, Halte und Gleise ausschließlich aus dem Output dieses Aufrufs.
-
-| Argument | Required | Type | Description |
-|---|---|---|---|
-| `accessibility_profile` | no | string | Mobility profile by name: `"Standard"` (default), `"WheelchairRobust"`, `"WalkerComfort"` or `"IndividualComfort"`. Each bundles its accessibility constraints and walk speed; another name is an argument error. The two wheelchair profiles find no ride at all today — the answer then carries `accessibility_routing` with `status: no_data` beside ordinary connections, which are to be reported as ordinary ones. What each profile constrains is in the usage guide. |
-| `cycling_profile` | no | string | Wer auf dem Rad sitzt, und damit das Tempo der Rad-Abschnitte: `family` (mit kleinen Kindern), `normal` (Default, unverändert) oder `ebike` (Pedelec). Ein anderer Name ist ein Argument-Fehler. |
-| `cycling_speed` | no | number | Rad-Tempo in Metern/Sekunde, 1 bis 12 — außerhalb ein Argument-Fehler. Überschreibt `cycling_profile`. Richtwerte: Familie ≈2.8, normal ≈5, Pedelec ≈6.5. |
-| `destination_id` | no | string | Destination id. Same form as `origin_id`. |
-| `destination_lat` | no | number | Destination latitude. Same use as `origin_lat`. |
-| `destination_lon` | no | number | Destination longitude. Goes with `destination_lat`. |
-| `destination_type` | no | string | What `destination_id` is. Same values as `origin_type`. |
-| `exclude_lines` | no | array | Line blacklist, same token form as `only_lines`. A journey is dropped if any transit leg uses one of them. |
-| `extended` | no | boolean | `true` keeps the map data in the text: every stop's coordinate, every leg's polyline, and the whole stop sequence with them — for an application that DRAWS the route, at two to three times the answer. A chat client leaves it off. |
-| `format` | no | string | Answer serialisation: `"toon"` (default) or `"json"` — the detail is in `get_usage_guide`. **An agent leaves this out.** |
-| `include_rental_bike` | no | boolean | `true` adds a rental-bike leg (park-and-bike / station rental). Equivalent to naming `"bike"` in `modes` together with a transit mode. |
-| `is_arrival_time` | no | boolean | `true` reads `time` as the desired ARRIVAL time instead of the departure time. |
-| `limit` | no | integer | Maximum number of journeys, at least 1. Default 5, values above 15 are served as 15. |
-| `max_transfers` | no | integer | Upper bound on interchanges: `0` = direct, up to `3`. Omit unless the user constrains transfers: the backend then derives the search depth from the trip's air-line distance and escalates it when the first attempt finds nothing, so omitting never loses a connection. |
-| `max_walk_meters` | no | integer | Cap on the summed walking DISTANCE in metres. Works like `max_walk_minutes`, on the metres walked. |
-| `max_walk_minutes` | no | integer | Cap on the summed walking TIME in minutes. A post-filter drops journeys above it; if that leaves nothing, the backend searches once more avoiding footpaths before the answer is empty. |
-| `mobility_profile` | no | string | How the first and the last mile may be covered, by name: `"transit"` (default — both ends on foot), `"transit_plus_sharing"` (a shared bike), `"door_to_door"` (being driven), `"park_and_ride"` or `"bike_and_ride"` (one's OWN car or bicycle, left where the transit leg starts). Another name is an argument error. It widens those two ends, restricts no ride and promises nothing. When to set which, and how it composes with `modes`, is in the usage guide. |
-| `modes` | no | array | Transport-mode restriction, not a preference: nothing outside the list is planned. The footpath always stays allowed — the way to, from and between stops goes on foot — while `["foot"]` on its own plans no ride at all. Entries: `"bike"`, `"bike_rental"`, `"foot"`, `"car"`, `"taxi"`, `"scooter"`, `"transit"`, `"bus"`, `"tram"`, `"rail"`, `"subway"`, `"ferry"`; several combine. An entry outside that list is an argument error, not a dropped filter. Omitted or empty = all standard transit modes, the ferry included. Set only when the user insists on a mode; the guide has the vocabulary and the traps. |
-| `only_lines` | no | array | Line whitelist. Entries are line tokens as printed on the vehicle (`"6"`, `"U3"`); a journey is kept only if every transit leg uses one of them. |
-| `origin_id` | no | string | Origin id. A DHID (`de:NNNNN:NNN`) for a stop, otherwise the resolver's `main` id of the address or POI. Resolve the place first — a name here is an argument error. |
-| `origin_lat` | no | number | Origin latitude, WGS-84 decimal degrees — the fallback when no id is at hand, and the one retry worth making when resolved ids find nothing. |
-| `origin_lon` | no | number | Origin longitude. Goes with `origin_lat`. |
-| `origin_type` | no | string | What `origin_id` is: `"stop"` (default), `"address"` or `"poi"`. A stop id is auto-prefixed `GTFS.de:`; the other two are forwarded verbatim so the backend resolves the real name. |
-| `prefer_flat` | no | boolean | `true` plant die hügel-ärmste statt der sonst gewählten Rad-Route: die Suche gewichtet die Steigung und nimmt dafür Umwege in Kauf, nur auf Rad-Abschnitten. Keine Zusage — ohne flachere Alternative kommt dieselbe Route; die Höhenmeter der Antwort sagen es. Wann setzen: die Anleitung. |
-| `submodes_allow` | no | array | Fine submode whitelist — finer than `modes`, which only separates bus/tram/rail/subway. Entries: `"sbahn"`, `"regionalbahn"`, `"ice"`, `"ic"`, `"ir"`, `"nj"`, `"fernverkehr"`, `"stadtbahn"`, `"ubahn"`, `"bus"`, `"regionalbus"`, `"stadtbus"`. A journey is kept only if every transit leg matches one. |
-| `submodes_deny` | no | array | Fine submode blacklist, same vocabulary as `submodes_allow`. A journey is dropped if any transit leg matches one. |
-| `time` | no | string | ISO 8601 timestamp (e.g. `"2026-06-15T08:30:00Z"`). Omit to plan from now. Resolve a spoken time with the time tool rather than computing one. |
-| `verbosity` | no | string | How much of each journey comes back: `"compact"` (default — everything an answer is cited from) or `"full"` (adds the stops in between). A third word is an argument error, not the default. |
-| `via_id` | no | string | Intermediate stop the route must pass through („über X"), as an id in the same form as `origin_id`. The route is then planned A → via → B. |
-| `via_lat` | no | number | Via latitude, for an intermediate address or POI without an id. Goes with `via_lon`. |
-| `via_lon` | no | number | Via longitude. Goes with `via_lat`. |
-| `via_type` | no | string | What `via_id` is. Same values as `origin_type`. |
-| `walk_speed` | no | number | Walking speed of the foot legs in metres/second, between 0.3 and 3 m/s — outside that it is an argument error. Default ≈1.33, slow ≈0.7, brisk ≈2.0. Overrides the walk speed of `accessibility_profile`. |
 
 <!-- tools:end -->

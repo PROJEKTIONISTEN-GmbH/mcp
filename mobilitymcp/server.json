@@ -3,7 +3,7 @@
   "name": "eu.projektionisten/mobility",
   "title": "MobilityMCP",
   "description": "Journeys, departures, line courses, disruptions in Germany; nearby sharing as currently reported.",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "websiteUrl": "https://ai.projektionisten.eu/mcp-landingpage/",
   "remotes": [
     {
