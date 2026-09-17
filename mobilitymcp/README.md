@@ -1,8 +1,10 @@
 # MobilityMCP
 
-Public transport in Germany as one MCP tool set: journeys, departure boards,
-line courses and disruption reports, together with the place, address and time
-resolution they need.
+<!-- summary:begin (generated) -->
+
+Public transport in Germany as one MCP tool set: journeys, departure boards, line courses and disruption reports, the place, address and time resolution they need, and a vicinity search that answers with nearby stops, places and sharing offers — the last of those with the free stock currently reported for them.
+
+<!-- summary:end -->
 
 * **Endpoint:** `https://ai.projektionisten.eu/mmcp`
 * **Transport:** MCP over streamable HTTP
@@ -22,8 +24,8 @@ where the data ends invents the rest.
   that area **is not an all-clear** — every answer says in its own `coverage`
   field what it can speak for, and your agent should pass that on rather than
   read silence as "no disruptions".
-* **Nothing but mobility.** Weather, air quality, tides and tourism content are
-  not here; that is [TourismMCP](../tourismmcp/README.md).
+* **Nothing but mobility.** Weather, tides and tourism content are not here;
+  that is [TourismMCP](../tourismmcp/README.md).
 * **No writing.** Every tool queries a timetable and changes nothing.
 
 Three things the server insists on, and that a good prompt does not fight:
@@ -95,5 +97,10 @@ terms, and one blanket notice would be wrong for part of it.
 
 ## Support
 
-<support@projektionisten.de> · [Imprint](https://www.projektionisten.de/impressum)
-· [Privacy policy](https://www.projektionisten.de/datenschutz)
+<support@projektionisten.de>
+
+<!-- legal:begin (generated) -->
+
+[Imprint](https://www.projektionisten.de/impressum) · [Privacy policy](https://www.projektionisten.de/mcp/mcp-datenschutz) (German) · [Terms of use](https://www.projektionisten.de/mcp/mcp-nutzungsbedingungen) (German)
+
+<!-- legal:end -->

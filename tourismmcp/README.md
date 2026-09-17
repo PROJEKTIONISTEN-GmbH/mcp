@@ -1,9 +1,10 @@
 # TourismMCP
 
-Travel and day-trip knowledge as one MCP tool set: sights and place details,
-curated tourism records with opening hours, prices and events, weather, tides,
-and a vicinity search that also reports the free stock of nearby sharing
-offers.
+<!-- summary:begin (generated) -->
+
+Travel and day-trip knowledge as one MCP tool set: sights and place details, curated tourism records with opening hours, prices and events, weather, tides, and a vicinity search that answers with nearby stops, places and sharing offers — the last of those with the free stock currently reported for them.
+
+<!-- summary:end -->
 
 * **Endpoint:** `https://ai.projektionisten.eu/tmcp`
 * **Transport:** MCP over streamable HTTP
@@ -23,10 +24,6 @@ where the data ends invents the rest.
   region outside it answers thinner rather than differently.
 * **Tides exist on the coast.** `get_tide` reads gauges; inland there is no
   gauge and no tide.
-* **Air quality is not connected at the moment.** The two air-quality tools are
-  in the catalogue, and they answer — with an explicit `available: false` and
-  the reason, rather than with a value. Read that as *no source*, not as *clean
-  air*. Everything else on this list answers with data.
 * **No timetable service.** Journeys, departure boards and disruption reports
   are not available here; that is
   [MobilityMCP](../mobilitymcp/README.md). Sharing stock is the one mobility
@@ -55,7 +52,7 @@ Four things the server insists on, and that a good prompt does not fight:
 
 <!-- tools:begin (generated from the server's tools/list) -->
 
-16 tools. The full description of each — arguments, limits, what may be quoted from an answer — is in [`tools.md`](tools.md).
+14 tools. The full description of each — arguments, limits, what may be quoted from an answer — is in [`tools.md`](tools.md).
 
 | Tool | Name |
 |---|---|
@@ -69,8 +66,6 @@ Four things the server insists on, and that a good prompt does not fight:
 | Kuratierter Eintrag im Detail | `get_tourism_details` |
 | Aktuelles Wetter | `get_current_weather` |
 | Wettervorhersage | `get_weather_forecast` |
-| Aktuelle Luftqualität | `get_current_air_quality` |
-| Luftqualitäts-Vorhersage | `get_air_quality_forecast` |
 | Gezeiten abfragen | `get_tide` |
 | Zeitangabe auflösen | `link_datetime` |
 | Nennung zuordnen | `link_dynamic` |
@@ -104,5 +99,10 @@ it.
 
 ## Support
 
-<support@projektionisten.de> · [Imprint](https://www.projektionisten.de/impressum)
-· [Privacy policy](https://www.projektionisten.de/datenschutz)
+<support@projektionisten.de>
+
+<!-- legal:begin (generated) -->
+
+[Imprint](https://www.projektionisten.de/impressum) · [Privacy policy](https://www.projektionisten.de/mcp/mcp-datenschutz) (German) · [Terms of use](https://www.projektionisten.de/mcp/mcp-nutzungsbedingungen) (German)
+
+<!-- legal:end -->

@@ -15,8 +15,8 @@ Löst den NAMEN einer Stadt, Region oder eines Bezirks in Koordinaten und OSM-Id
 | Argument | Required | Type | Description |
 |---|---|---|---|
 | `format` | no | string | Answer serialisation: `"toon"` (default) or `"json"` — the detail is in `get_usage_guide`. **An agent leaves this out.** |
-| `lang` | no | string | Optional ISO language code (e.g. "de", "en"). Currently advisory — the underlying TravelPoint index is German-built; surface kept for symmetry with the original L3S geo tool and for forward-compat when the backend grows i18n. |
-| `name` | yes | string | Name of the place to search for. Free-text fuzzy match against the TravelPoint NDS place index (e.g. "Hannover", "Maschsee", "Wangerland"). |
+| `lang` | no | string | Optional ISO language code (e.g. "de", "en"). Currently advisory: the place names are the German ones the data carries, whatever is asked for. Kept in the signature so a multilingual answer needs no new argument. |
+| `name` | yes | string | Name of the place to search for. Free-text fuzzy match against the place index behind this endpoint (e.g. "Hannover", "Maschsee", "Wangerland"). |
 
 ## Ort auflösen — `resolve_location`
 
@@ -64,7 +64,7 @@ Benennt, was an einer KOORDINATE liegt — der Ort („was liegt bei <lat,lon>")
 | `level` | no | string | Optional resolution level. `"place"` (default) answers with the coordinate's whole admin hierarchy, finest first (suburb → town → county → state → country); `"city"` with the town/municipality it lies in; `"suburb"` with the suburb; `"street"` with the nearest STREET/ADDRESS (street name + nearest house number, e.g. `"Münzstraße 3-4"`) — the level needed to label a real GPS start position. Where the data has no place at the requested level, the next coarser one answers, recognisable by its `place_type`. Any other / omitted value behaves as `"place"`. |
 | `limit` | no | integer | Optional maximum number of hits, nearest first. Default 10, upper bound 50; a larger value is served as 50 and `0` as the default. Applies to every level and with or without `radius_m`. |
 | `lon` | yes | number | Longitude of the coordinate to reverse-geocode. Also accepted spelled `longitude`, the way the vicinity search takes it — one of the two spellings per call. |
-| `radius_m` | no | number | Optional radius in METRES. When set, returns the TravelPoint places inside the circle, sorted nearest-first and capped to `limit`. A place the coordinate LIES INSIDE is at distance 0 and is therefore in every radius, however tight. When omitted, returns the `limit` nearest places. |
+| `radius_m` | no | number | Optional radius in METRES. When set, returns the places inside the circle, sorted nearest-first and capped to `limit`. A place the coordinate LIES INSIDE is at distance 0 and is therefore in every radius, however tight. When omitted, returns the `limit` nearest places. |
 
 ## Verbindung suchen — `connections`
 

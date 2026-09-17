@@ -4,10 +4,14 @@ Two hosted remote MCP servers, run by PROJEKTIONISTEN. **This repository is
 documentation only** — the servers themselves are operated by us; there is no
 code to install and nothing to run.
 
+<!-- servers:begin (generated) -->
+
 | Server | What it answers | Endpoint |
 |---|---|---|
-| [MobilityMCP](mobilitymcp/README.md) | public transport in Germany: journeys, departure boards, line courses, disruption reports | `https://ai.projektionisten.eu/mmcp` |
-| [TourismMCP](tourismmcp/README.md) | sights and places, curated tourism records, weather, tides, sharing availability | `https://ai.projektionisten.eu/tmcp` |
+| [MobilityMCP](mobilitymcp/README.md) | Journeys, departures, line courses, disruptions in Germany; nearby sharing as currently reported. | `https://ai.projektionisten.eu/mmcp` |
+| [TourismMCP](tourismmcp/README.md) | Sights, events, opening hours, weather and tides; nearby sharing as currently reported. | `https://ai.projektionisten.eu/tmcp` |
+
+<!-- servers:end -->
 
 Both speak MCP over **streamable HTTP**. Both are metered per account.
 
@@ -73,8 +77,9 @@ these servers, pass the notice on.**
 
 * Questions, problems, accounts: <support@projektionisten.de>
 * Security reports: [SECURITY.md](SECURITY.md)
-* Imprint: <https://www.projektionisten.de/impressum>
-* Privacy policy: <https://www.projektionisten.de/datenschutz>
 
-Terms for the MCP offering are being drawn up; until they are published, the
-terms in place are the ones agreed with your account.
+<!-- legal:begin (generated) -->
+
+[Imprint](https://www.projektionisten.de/impressum) · [Privacy policy](https://www.projektionisten.de/mcp/mcp-datenschutz) (German) · [Terms of use](https://www.projektionisten.de/mcp/mcp-nutzungsbedingungen) (German)
+
+<!-- legal:end -->
