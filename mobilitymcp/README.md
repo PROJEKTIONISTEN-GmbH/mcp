@@ -44,7 +44,7 @@ Three things the server insists on, and that a good prompt does not fight:
 
 <!-- tools:begin (generated from the server's tools/list) -->
 
-10 tools. The full description of each — arguments, limits, what may be quoted from an answer — is in [`tools.md`](tools.md).
+13 tools. The full description of each — arguments, limits, what may be quoted from an answer — is in [`tools.md`](tools.md).
 
 | Tool | Name |
 |---|---|
@@ -58,6 +58,9 @@ Three things the server insists on, and that a good prompt does not fight:
 | Linienverlauf abfragen | `line_course` |
 | Zeitangabe auflösen | `link_datetime` |
 | Anleitung lesen | `get_usage_guide` |
+| Verbindung anzeigen | `show_connections` |
+| Abfahrtstafel anzeigen | `show_departures` |
+| Verbindung schlank anzeigen | `show_connections_slim` |
 
 <!-- tools:end -->
 

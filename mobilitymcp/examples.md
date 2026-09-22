@@ -13,7 +13,9 @@ words they are filed under.
 
 `link_datetime` turns „morgen früh um 8" into an instant, `resolve_location`
 turns both station names into ids, and `connections` plans the ride. The answer
-names departure and arrival, the lines, and every change.
+names departure and arrival, the lines, and every change. Ask it in a client
+that draws, and `show_connections` answers the same journey with a view beside
+it.
 
 ## What is leaving right now
 

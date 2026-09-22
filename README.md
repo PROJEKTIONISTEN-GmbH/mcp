@@ -10,6 +10,7 @@ code to install and nothing to run.
 |---|---|---|
 | [MobilityMCP](mobilitymcp/README.md) | Journeys, departures, line courses, disruptions in Germany; nearby sharing as currently reported. | `https://ai.projektionisten.eu/mmcp` |
 | [TourismMCP](tourismmcp/README.md) | Sights, events, opening hours, weather and tides; nearby sharing as currently reported. | `https://ai.projektionisten.eu/tmcp` |
+| [PROJEKTIONISTEN ÖPNV](oepnv/README.md) | Trains, buses, disruptions, day trips, weather and tides for Germany, in one place. | `https://ai.projektionisten.eu/oepnv` |
 
 <!-- servers:end -->
 

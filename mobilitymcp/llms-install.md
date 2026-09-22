@@ -70,8 +70,8 @@ With an API key, there is nothing to sign in to — the header is the credential
 
 ## Step 3 — check that it answers
 
-Ask the client to list the tools. You should see **10**, beginning with
-`search_place` and ending with `get_usage_guide`; the full list is in
+Ask the client to list the tools. You should see **13**, beginning with
+`search_place` and ending with `show_connections_slim`; the full list is in
 [`tools.md`](tools.md). `tools/list` is answered without a credential, so this
 step works even before the login does.
 
