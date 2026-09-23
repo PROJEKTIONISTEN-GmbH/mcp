@@ -17,6 +17,10 @@ The first entry records a change made before this file existed, and therefore
 carries the version the two servers were already published under. From the next
 entry on, the number moves with the rule above.
 
+## 2026-09-22 — TourismMCP 0.1.1
+
+- description changed: `get_poi_details`, `expand_kg_pois`, `search_tourism`, `get_current_weather`, `get_weather_forecast`, `get_tide`, `link_datetime`
+
 ## 2026-09-21 — MobilityMCP 0.3.0
 
 - added: `show_connections`, `show_departures`, `show_connections_slim`
