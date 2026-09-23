@@ -10,12 +10,21 @@ change it was:
 - **minor** — a tool or an optional argument was added. Nothing that worked stops.
 - **patch** — only the wording changed.
 
-The entries are generated from what the servers answer to `tools/list`; what a
+The entries are generated from what the servers answer to `tools/list` and from
+their registry listing (`server.json`), whose wording counts as a patch; what a
 tool takes and returns in detail is in the `tools.md` beside it.
 
 The first entry records a change made before this file existed, and therefore
 carries the version the two servers were already published under. From the next
 entry on, the number moves with the rule above.
+
+## 2026-09-23 — MobilityMCP 0.3.1
+
+- listing changed: `description`
+
+## 2026-09-23 — TourismMCP 0.1.2
+
+- listing changed: `description`
 
 ## 2026-09-22 — TourismMCP 0.1.1
 
