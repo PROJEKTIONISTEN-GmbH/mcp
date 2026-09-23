@@ -13,7 +13,7 @@ Travel and day-trip knowledge as one MCP tool set: sights and place details, cur
 * **Credential:** OAuth 2.1, or an API key as `Authorization: Bearer <your-key>`
 * **Registry entry:** [`server.json`](server.json)
 * **Setup:** [`llms-install.md`](llms-install.md) · **Prompts:** [`examples.md`](examples.md)
-* **Listed in:** [Glama](https://glama.ai/mcp/connectors/eu.projektionisten/tourism)
+* **Listed in:** [Smithery](https://smithery.ai/servers/kaufmann/TourismMCP) · [Glama](https://glama.ai/mcp/connectors/eu.projektionisten/tourism)
 
 ## What it reaches, and where it stops
 

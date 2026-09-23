@@ -79,7 +79,7 @@ these servers, pass the notice on.**
 
 [![MobilityMCP MCP connector – tool definition quality and endpoint health on Glama](https://glama.ai/mcp/connectors/eu.projektionisten/mobility/badges/score.svg)](https://glama.ai/mcp/connectors/eu.projektionisten/mobility)
 
-**TourismMCP** · [Glama](https://glama.ai/mcp/connectors/eu.projektionisten/tourism)
+**TourismMCP** · [Smithery](https://smithery.ai/servers/kaufmann/TourismMCP) · [Glama](https://glama.ai/mcp/connectors/eu.projektionisten/tourism)
 
 [![TourismMCP MCP connector – tool definition quality and endpoint health on Glama](https://glama.ai/mcp/connectors/eu.projektionisten/tourism/badges/score.svg)](https://glama.ai/mcp/connectors/eu.projektionisten/tourism)
 
