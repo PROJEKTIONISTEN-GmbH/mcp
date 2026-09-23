@@ -1,0 +1,15 @@
+{
+  "$schema": "https://context7.com/schema/context7.json",
+  "projectTitle": "PROJEKTIONISTEN MCP",
+  "description": "Two remote MCP servers for Germany: MobilityMCP (public transport: journeys, departures, disruptions, nearby sharing) and TourismMCP (sights, events, opening hours and prices, weather and tides).",
+  "folders": [],
+  "excludeFolders": ["oepnv"],
+  "excludeFiles": ["CHANGELOG.md", "SECURITY.md"],
+  "rules": [
+    "Both servers are remote MCP servers over streamable HTTP: MobilityMCP at https://ai.projektionisten.eu/mmcp, TourismMCP at https://ai.projektionisten.eu/tmcp. There is no package to install.",
+    "Authenticate with OAuth 2.1 (dynamic client registration) or with an API key sent as 'Authorization: Bearer <key>'. An unauthenticated request is answered with 401 and a pointer to the sign-in; this is expected.",
+    "Call the tool get_usage_guide once before using the other tools; it explains how the tools fit together.",
+    "Resolve place names with search_place or resolve_location first and pass the returned identifiers or coordinates to the other tools instead of free text.",
+    "Show the attribution returned with the data; the sources are listed in the attribution resource of each server."
+  ]
+}
