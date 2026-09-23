@@ -1,5 +1,7 @@
 # MobilityMCP
 
+[![MobilityMCP MCP connector – tool definition quality and endpoint health on Glama](https://glama.ai/mcp/connectors/eu.projektionisten/mobility/badges/score.svg)](https://glama.ai/mcp/connectors/eu.projektionisten/mobility)
+
 <!-- summary:begin (generated) -->
 
 Public transport in Germany as one MCP tool set: journeys, departure boards, line courses and disruption reports, the place, address and time resolution they need, and a vicinity search that answers with nearby stops, places and sharing offers — the last of those with the free stock currently reported for them.
@@ -11,6 +13,7 @@ Public transport in Germany as one MCP tool set: journeys, departure boards, lin
 * **Credential:** OAuth 2.1, or an API key as `Authorization: Bearer <your-key>`
 * **Registry entry:** [`server.json`](server.json)
 * **Setup:** [`llms-install.md`](llms-install.md) · **Prompts:** [`examples.md`](examples.md)
+* **Listed in:** [Smithery](https://smithery.ai/servers/kaufmann/MobilityMCP) · [Glama](https://glama.ai/mcp/connectors/eu.projektionisten/mobility)
 
 ## What it reaches, and where it stops
 

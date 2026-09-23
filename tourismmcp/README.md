@@ -1,5 +1,7 @@
 # TourismMCP
 
+[![TourismMCP MCP connector – tool definition quality and endpoint health on Glama](https://glama.ai/mcp/connectors/eu.projektionisten/tourism/badges/score.svg)](https://glama.ai/mcp/connectors/eu.projektionisten/tourism)
+
 <!-- summary:begin (generated) -->
 
 Travel and day-trip knowledge as one MCP tool set: sights and place details, curated tourism records with opening hours, prices and events, weather, tides, and a vicinity search that answers with nearby stops, places and sharing offers — the last of those with the free stock currently reported for them.
@@ -11,6 +13,7 @@ Travel and day-trip knowledge as one MCP tool set: sights and place details, cur
 * **Credential:** OAuth 2.1, or an API key as `Authorization: Bearer <your-key>`
 * **Registry entry:** [`server.json`](server.json)
 * **Setup:** [`llms-install.md`](llms-install.md) · **Prompts:** [`examples.md`](examples.md)
+* **Listed in:** [Glama](https://glama.ai/mcp/connectors/eu.projektionisten/tourism)
 
 ## What it reaches, and where it stops
 
