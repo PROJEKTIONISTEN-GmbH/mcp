@@ -103,7 +103,7 @@ Plant ÖPNV-Verbindungen von A nach B, deutschlandweit, Fernrouten eingeschlosse
 | `origin_id` | no | string | Origin id. A DHID (`de:NNNNN:NNN`) for a stop, otherwise the resolver's `main` id of the address or POI. Resolve the place first — a name here is an argument error. |
 | `origin_lat` | no | number | Origin latitude, WGS-84 decimal degrees — the fallback when no id is at hand, and the one retry worth making when resolved ids find nothing. |
 | `origin_lon` | no | number | Origin longitude. Goes with `origin_lat`. |
-| `origin_type` | no | string | What `origin_id` is: `"stop"` (default), `"address"` or `"poi"`. A stop id is auto-prefixed `GTFS.de:`; the other two are forwarded verbatim so the backend resolves the real name. |
+| `origin_type` | no | string | What `origin_id` is: `"stop"` (default), `"address"` or `"poi"`. The backend resolves an address or a POI to its real name from the id. |
 | `prefer_flat` | no | boolean | `true` plant die hügel-ärmste statt der sonst gewählten Rad-Route: die Suche gewichtet die Steigung und nimmt dafür Umwege in Kauf, nur auf Rad-Abschnitten. Keine Zusage — ohne flachere Alternative kommt dieselbe Route; die Höhenmeter der Antwort sagen es. Wann setzen: die Anleitung. |
 | `render_payload` | no | boolean | `true` appends the same journeys again as raw JSON, addressed to the user rather than to the model — the map geometry an application draws from. A chat client leaves this off: it is the whole answer twice. |
 | `submodes_allow` | no | array | Fine submode whitelist — finer than `modes`, which only separates bus/tram/rail/subway. Entries: `"sbahn"`, `"regionalbahn"`, `"ice"`, `"ic"`, `"ir"`, `"nj"`, `"fernverkehr"`, `"stadtbahn"`, `"ubahn"`, `"bus"`, `"regionalbus"`, `"stadtbus"`. A journey is kept only if every transit leg matches one. |
@@ -233,7 +233,7 @@ Die ausführliche Anleitung zu den Werkzeugen dieses Katalogs: wofür ein Werkze
 | `origin_id` | no | string | Origin id. A DHID (`de:NNNNN:NNN`) for a stop, otherwise the resolver's `main` id of the address or POI. Resolve the place first — a name here is an argument error. |
 | `origin_lat` | no | number | Origin latitude, WGS-84 decimal degrees — the fallback when no id is at hand, and the one retry worth making when resolved ids find nothing. |
 | `origin_lon` | no | number | Origin longitude. Goes with `origin_lat`. |
-| `origin_type` | no | string | What `origin_id` is: `"stop"` (default), `"address"` or `"poi"`. A stop id is auto-prefixed `GTFS.de:`; the other two are forwarded verbatim so the backend resolves the real name. |
+| `origin_type` | no | string | What `origin_id` is: `"stop"` (default), `"address"` or `"poi"`. The backend resolves an address or a POI to its real name from the id. |
 | `prefer_flat` | no | boolean | `true` plant die hügel-ärmste statt der sonst gewählten Rad-Route: die Suche gewichtet die Steigung und nimmt dafür Umwege in Kauf, nur auf Rad-Abschnitten. Keine Zusage — ohne flachere Alternative kommt dieselbe Route; die Höhenmeter der Antwort sagen es. Wann setzen: die Anleitung. |
 | `submodes_allow` | no | array | Fine submode whitelist — finer than `modes`, which only separates bus/tram/rail/subway. Entries: `"sbahn"`, `"regionalbahn"`, `"ice"`, `"ic"`, `"ir"`, `"nj"`, `"fernverkehr"`, `"stadtbahn"`, `"ubahn"`, `"bus"`, `"regionalbus"`, `"stadtbus"`. A journey is kept only if every transit leg matches one. |
 | `submodes_deny` | no | array | Fine submode blacklist, same vocabulary as `submodes_allow`. A journey is dropped if any transit leg matches one. |
@@ -308,7 +308,7 @@ Die ausführliche Anleitung zu den Werkzeugen dieses Katalogs: wofür ein Werkze
 | `origin_id` | no | string | Origin id. A DHID (`de:NNNNN:NNN`) for a stop, otherwise the resolver's `main` id of the address or POI. Resolve the place first — a name here is an argument error. |
 | `origin_lat` | no | number | Origin latitude, WGS-84 decimal degrees — the fallback when no id is at hand, and the one retry worth making when resolved ids find nothing. |
 | `origin_lon` | no | number | Origin longitude. Goes with `origin_lat`. |
-| `origin_type` | no | string | What `origin_id` is: `"stop"` (default), `"address"` or `"poi"`. A stop id is auto-prefixed `GTFS.de:`; the other two are forwarded verbatim so the backend resolves the real name. |
+| `origin_type` | no | string | What `origin_id` is: `"stop"` (default), `"address"` or `"poi"`. The backend resolves an address or a POI to its real name from the id. |
 | `prefer_flat` | no | boolean | `true` plant die hügel-ärmste statt der sonst gewählten Rad-Route: die Suche gewichtet die Steigung und nimmt dafür Umwege in Kauf, nur auf Rad-Abschnitten. Keine Zusage — ohne flachere Alternative kommt dieselbe Route; die Höhenmeter der Antwort sagen es. Wann setzen: die Anleitung. |
 | `submodes_allow` | no | array | Fine submode whitelist — finer than `modes`, which only separates bus/tram/rail/subway. Entries: `"sbahn"`, `"regionalbahn"`, `"ice"`, `"ic"`, `"ir"`, `"nj"`, `"fernverkehr"`, `"stadtbahn"`, `"ubahn"`, `"bus"`, `"regionalbus"`, `"stadtbus"`. A journey is kept only if every transit leg matches one. |
 | `submodes_deny` | no | array | Fine submode blacklist, same vocabulary as `submodes_allow`. A journey is dropped if any transit leg matches one. |
