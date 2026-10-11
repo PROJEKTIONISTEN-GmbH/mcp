@@ -4,7 +4,7 @@
 
 <!-- summary:begin (generated) -->
 
-Public transport in Germany as one MCP tool set: journeys, departure boards, line courses and disruption reports, the place, address and time resolution they need, and a vicinity search that answers with nearby stops, places and sharing offers — the last of those with the free stock currently reported for them.
+Public transport in Germany, Austria and Switzerland as one MCP tool set: journeys, departure boards and line courses, disruption reports, the place, address and time resolution they need, and a vicinity search that answers with nearby stops, places and sharing offers — the last of those with the free stock currently reported for them.
 
 <!-- summary:end -->
 
@@ -20,8 +20,15 @@ Public transport in Germany as one MCP tool set: journeys, departure boards, lin
 This matters more than the feature list, because an agent that does not know
 where the data ends invents the rest.
 
-* **Journeys, departures and line courses are Germany-wide.** They are planned
-  on the nationwide timetable data set, long-distance services included.
+* **Journeys, departures and line courses cover Germany, Austria and
+  Switzerland.** They are planned on the timetables of all three countries,
+  long-distance and cross-border services included. In Austria and Switzerland
+  they come from the timetable alone — **no real time** — and every ride from
+  there names its source. A place outside the three countries is not covered.
+* **Beyond the German border, `resolve_location` finds the places.** It resolves
+  stops, addresses and places in Austria and Switzerland; `search_place`,
+  `reverse_geocode` and `nearby` search Germany only, and the sharing stock and
+  park-and-ride sites come from German feeds.
 * **Disruption reports cover Lower Saxony, Bremen and Hamburg.** Outside those,
   there is no data behind this tool at all. An empty disruption answer outside
   that area **is not an all-clear** — every answer says in its own `coverage`
@@ -87,10 +94,11 @@ carries sourced data repeats these notices machine-readably in its
 |---|---|---|
 | OpenStreetMap | ODbL-1.0 (<https://www.openstreetmap.org/copyright>) | `© OpenStreetMap contributors` |
 | DELFI e.V. — nationwide timetable and real-time data | CC-BY-4.0 (<https://www.opendata-oepnv.de/>) | `CC BY 4.0 © DELFI e.V.` |
+| Mobilitätsverbünde Österreich OG — the timetables of the Austrian transport associations | Datenlizenz Mobilitätsverbünde Österreich (<https://data.mobilitaetsverbuende.at/de/data-sets>) | `Datenquelle: Mobilitätsverbünde Österreich OG` |
+| opentransportdata.swiss — the Swiss timetable | Nutzungsbedingungen opentransportdata.swiss (<https://opentransportdata.swiss/de/terms-of-use/>) | `Datenquelle: opentransportdata.swiss` |
 | MobiData BW (Nahverkehrsgesellschaft Baden-Württemberg) | DL-DE/BY-2.0 (<https://www.mobidata-bw.de/>) | `Datenquelle: MobiData BW, Nahverkehrsgesellschaft Baden-Württemberg (NVBW)` |
 | Mobilitätsdatenmarktplatz go.Rheinland | per network (<https://mdd.gorheinland.com/>) | `Datenquelle: Mobilitätsdatenmarktplatz go.Rheinland` |
 | The operators of the GBFS feeds behind the sharing stock | per network (<https://gbfs.org/>) | each network's own — every station in an answer carries it |
-| stadtmobil carsharing | no open licence stated (<https://www.stadtmobil.de/>) | `Stationsdaten: stadtmobil` |
 | Protomaps — the vector base-map build our tiles are cut from | BSD-3-Clause (<https://build.protomaps.com/>) | nothing to name |
 | Natural Earth — the small-scale basis of the base map | public domain (<https://www.naturalearthdata.com/>) | nothing to name |
 

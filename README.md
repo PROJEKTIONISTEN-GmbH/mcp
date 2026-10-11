@@ -8,7 +8,7 @@ code to install and nothing to run.
 
 | Server | What it answers | Endpoint |
 |---|---|---|
-| [MobilityMCP](mobilitymcp/README.md) | Public transport in Germany (ÖPNV, Fahrplan): journeys, departures, disruptions, nearby sharing. | `https://ai.projektionisten.eu/mmcp` |
+| [MobilityMCP](mobilitymcp/README.md) | Public transport in Germany, Austria and Switzerland (ÖPNV, Fahrplan): journeys, departures, lines. | `https://ai.projektionisten.eu/mmcp` |
 | [TourismMCP](tourismmcp/README.md) | Travel in Germany (Tourismus): sights, events, opening hours and prices, weather and tides. | `https://ai.projektionisten.eu/tmcp` |
 
 <!-- servers:end -->

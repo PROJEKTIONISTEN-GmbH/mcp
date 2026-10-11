@@ -3,7 +3,7 @@
   "url": "https://context7.com/projektionisten-gmbh/mcp",
   "public_key": "pk_LnjD5ALVynvAq7rvRUG4y",
   "projectTitle": "PROJEKTIONISTEN MCP",
-  "description": "Two remote MCP servers for Germany: MobilityMCP (public transport: journeys, departures, disruptions, nearby sharing) and TourismMCP (sights, events, opening hours and prices, weather and tides).",
+  "description": "Two remote MCP servers: MobilityMCP (public transport in Germany, Austria and Switzerland: journeys, departures; disruptions and nearby sharing in Germany) and TourismMCP (sights, events, opening hours and prices, weather and tides in Germany).",
   "folders": [],
   "excludeFolders": [
     "oepnv"
