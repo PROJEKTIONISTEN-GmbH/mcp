@@ -22,18 +22,22 @@ where the data ends invents the rest.
 
 * **Journeys, departures and line courses cover Germany, Austria and
   Switzerland.** They are planned on the timetables of all three countries,
-  long-distance and cross-border services included. In Austria and Switzerland
-  they come from the timetable alone — **no real time** — and every ride from
-  there names its source. A place outside the three countries is not covered.
+  long-distance and cross-border services included. In Germany and Switzerland
+  they come with real-time data — delays, cancellations, notices; in Switzerland
+  without platform changes, which its source does not report. In Austria they
+  come from the timetable alone — **no real time**. Every ride from Austria or
+  Switzerland names its source. A place outside the three countries is not
+  covered.
 * **Beyond the German border, `resolve_location` finds the places.** It resolves
   stops, addresses and places in Austria and Switzerland; `search_place`,
   `reverse_geocode` and `nearby` search Germany only, and the sharing stock and
   park-and-ride sites come from German feeds.
-* **Disruption reports cover Lower Saxony, Bremen and Hamburg.** Outside those,
-  there is no data behind this tool at all. An empty disruption answer outside
-  that area **is not an all-clear** — every answer says in its own `coverage`
-  field what it can speak for, and your agent should pass that on rather than
-  read silence as "no disruptions".
+* **Disruption reports cover Lower Saxony, Bremen, Hamburg and Switzerland** —
+  Switzerland while its sources are current; elsewhere, Austria included, there
+  is no data behind this tool. An empty disruption answer outside those regions
+  **is not an all-clear** — every answer says in its own `coverage` field what
+  it can speak for, and your agent should pass that on rather than read silence
+  as "no disruptions".
 * **Nothing but mobility.** Weather, tides and tourism content are not here;
   that is [TourismMCP](../tourismmcp/README.md).
 * **No writing.** Every tool queries a timetable and changes nothing.
