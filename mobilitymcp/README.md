@@ -23,9 +23,8 @@ where the data ends invents the rest.
 * **Journeys, departures and line courses cover Germany, Austria and
   Switzerland.** They are planned on the timetables of all three countries,
   long-distance and cross-border services included. In Germany and Switzerland
-  they come with real-time data — delays, cancellations, notices; in Switzerland
-  without platform changes, which its source does not report. In Austria they
-  come from the timetable alone — **no real time**. Every ride from Austria or
+  they come with real-time data — delays, cancellations, platform changes,
+  notices. In Austria they come from the timetable alone — **no real time**. Every ride from Austria or
   Switzerland names its source. A place outside the three countries is not
   covered.
 * **Beyond the German border, `resolve_location` finds the places.** It resolves
