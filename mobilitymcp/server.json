@@ -3,7 +3,7 @@
   "name": "eu.projektionisten/mobility",
   "title": "MobilityMCP",
   "description": "Public transport in Germany, Austria and Switzerland (ÖPNV, Fahrplan): journeys, departures, lines.",
-  "version": "0.9.4",
+  "version": "0.11.2",
   "websiteUrl": "https://ai.projektionisten.eu/mcp-landingpage/",
   "remotes": [
     {
