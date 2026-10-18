@@ -20,15 +20,18 @@ Public transport in Germany, Austria and Switzerland as one MCP tool set: journe
 This matters more than the feature list, because an agent that does not know
 where the data ends invents the rest.
 
-* **Journeys, departures and line courses cover Germany, Austria and
-  Switzerland.** They are planned on the timetables of all three countries,
-  long-distance and cross-border services included. In Germany and Switzerland
-  they come with real-time data — delays, cancellations, platform changes,
-  notices. In Austria they come from the timetable alone — **no real time**. Every ride from Austria or
-  Switzerland names its source. A place outside the three countries is not
-  covered.
+* **Journeys, departures and line courses cover Germany, Austria, Switzerland
+  and South Tyrol.** They are planned on the timetables of all three countries
+  and of South Tyrol (the Italian province), long-distance and cross-border
+  services included — München to Bozen over the Brenner, for one. In Germany and
+  Switzerland, and on South Tyrol's buses, they come with real-time data —
+  delays, cancellations, platform changes, notices. In Austria and on South
+  Tyrol's trains they come from the timetable alone — **no real time**. Every
+  ride names its source, and each answer says when each source's timetable was
+  last updated. A place outside these regions — the rest of Italy included — is
+  not covered.
 * **Beyond the German border, `resolve_location` finds the places.** It resolves
-  stops, addresses and places in Austria and Switzerland; `search_place`,
+  stops, addresses and places in Austria, Switzerland and South Tyrol; `search_place`,
   `reverse_geocode` and `nearby` search Germany only, and the sharing stock and
   park-and-ride sites come from German feeds.
 * **Disruption reports cover Lower Saxony, Bremen, Hamburg and Switzerland** —
@@ -99,6 +102,7 @@ carries sourced data repeats these notices machine-readably in its
 | DELFI e.V. — nationwide timetable and real-time data | CC-BY-4.0 (<https://www.opendata-oepnv.de/>) | `CC BY 4.0 © DELFI e.V.` |
 | Mobilitätsverbünde Österreich OG — the timetables of the Austrian transport associations | Datenlizenz Mobilitätsverbünde Österreich (<https://data.mobilitaetsverbuende.at/de/data-sets>) | `Datenquelle: Mobilitätsverbünde Österreich OG` |
 | opentransportdata.swiss — the Swiss timetable | Nutzungsbedingungen opentransportdata.swiss (<https://opentransportdata.swiss/de/terms-of-use/>) | `Datenquelle: opentransportdata.swiss` |
+| STA – Südtiroler Transportstrukturen AG — the timetable of South Tyrol, published by the Open Data Hub | CC0-1.0 (<https://gtfs.api.opendatahub.com/v1/dataset/sta-time-tables>) | `Datenquelle: STA – Südtiroler Transportstrukturen AG (Open Data Hub)` |
 | MobiData BW (Nahverkehrsgesellschaft Baden-Württemberg) | DL-DE/BY-2.0 (<https://www.mobidata-bw.de/>) | `Datenquelle: MobiData BW, Nahverkehrsgesellschaft Baden-Württemberg (NVBW)` |
 | Mobilitätsdatenmarktplatz go.Rheinland | per network (<https://mdd.gorheinland.com/>) | `Datenquelle: Mobilitätsdatenmarktplatz go.Rheinland` |
 | The operators of the GBFS feeds behind the sharing stock | per network (<https://gbfs.org/>) | each network's own — every station in an answer carries it |
