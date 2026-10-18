@@ -102,7 +102,7 @@ Plant ÖPNV-Verbindungen von A nach B in Deutschland, Österreich und der Schwei
 | `no_change_at` | no | array | Halt-Ids wie `origin_id`, an denen keine Verbindung umsteigt. |
 | `not_via` | no | array | Halt-Ids wie `origin_id`, die keine Verbindung berührt. |
 | `only_lines` | no | array | Line whitelist. Entries are line tokens as printed on the vehicle (`"6"`, `"U3"`); a journey is kept only if every transit leg uses one of them. |
-| `origin_id` | no | string | Origin id. A DHID (`de:NNNNN:NNN`; in Austria and Switzerland `at:…`/`ch:…`) for a stop, otherwise the resolver's `main` id of the address or POI. Resolve the place first — a name here is an argument error. |
+| `origin_id` | no | string | Origin id: the resolver's `main` id as handed out — for a stop a DHID (`de:NNNNN:NNN`, `at:…`, `ch:…`) or a station id (`Parentch:1:sloid:3000`), else the address or POI id. Resolve the place first — a name here is an argument error. |
 | `origin_lat` | no | number | Origin latitude, WGS-84 decimal degrees — the fallback when no id is at hand, and the one retry worth making when resolved ids find nothing. |
 | `origin_lon` | no | number | Origin longitude. Goes with `origin_lat`. |
 | `origin_type` | no | string | What `origin_id` is: `"stop"` (default), `"address"` or `"poi"`. The backend resolves an address or a POI to its real name from the id. |
@@ -135,7 +135,7 @@ Abfahrten oder Ankünfte für EINE Haltestelle — **als Daten, für Ergebnisse,
 | `facilities` | no | string | Instead of the board, the stop's lifts, escalators and ramps („hat Kröpcke einen Aufzug zur U-Bahn?"): `"elevator"`, `"escalator"`, `"ramp"` or `"all"`; the guide has the fields. |
 | `first_last` | no | boolean | `true` answers instead of the board, per line and direction, the first and the last ride of a day („letzte Bahn heute"): the day running now, or the calendar day of `time` in local time. |
 | `format` | no | string | Answer serialisation: `"toon"` (default) or `"json"` — the detail is in `get_usage_guide`. **An agent leaves this out.** |
-| `id` | yes | string | Stop id to read the board of, as a DHID (`"de:03241:57"`; in Austria and Switzerland `at:…`/`ch:…`). Resolve the stop first — a name here is an argument error. |
+| `id` | yes | string | Stop id to read the board of, as the resolver hands it out: a DHID (`"de:03241:57"`, `at:…`, `ch:…`) or a station id (`"Parentch:1:sloid:3000"`). Resolve the stop first — a name here is an argument error. |
 | `is_arrival_time` | no | boolean | `true` reads `time` as an ARRIVAL time — the same as `arrival_departure = "arrivals"`. |
 | `last_of_window` | no | boolean | Which end of a `time_range_seconds` window to read: omitted or `false` the FIRST departures, `true` the LAST ones (the end-of-service question). An answer carrying `window_truncated: true` beside its board did NOT reach the window's end — its last entry is then not the last departure. Without a window it has no effect. |
 | `limit` | no | integer | Maximum number of departures, at least 1. Default 5, values above 15 are served as 15. |
@@ -236,7 +236,7 @@ Die ausführliche Anleitung zu den Werkzeugen dieses Katalogs: wofür ein Werkze
 | `no_change_at` | no | array | Halt-Ids wie `origin_id`, an denen keine Verbindung umsteigt. |
 | `not_via` | no | array | Halt-Ids wie `origin_id`, die keine Verbindung berührt. |
 | `only_lines` | no | array | Line whitelist. Entries are line tokens as printed on the vehicle (`"6"`, `"U3"`); a journey is kept only if every transit leg uses one of them. |
-| `origin_id` | no | string | Origin id. A DHID (`de:NNNNN:NNN`; in Austria and Switzerland `at:…`/`ch:…`) for a stop, otherwise the resolver's `main` id of the address or POI. Resolve the place first — a name here is an argument error. |
+| `origin_id` | no | string | Origin id: the resolver's `main` id as handed out — for a stop a DHID (`de:NNNNN:NNN`, `at:…`, `ch:…`) or a station id (`Parentch:1:sloid:3000`), else the address or POI id. Resolve the place first — a name here is an argument error. |
 | `origin_lat` | no | number | Origin latitude, WGS-84 decimal degrees — the fallback when no id is at hand, and the one retry worth making when resolved ids find nothing. |
 | `origin_lon` | no | number | Origin longitude. Goes with `origin_lat`. |
 | `origin_type` | no | string | What `origin_id` is: `"stop"` (default), `"address"` or `"poi"`. The backend resolves an address or a POI to its real name from the id. |
@@ -266,7 +266,7 @@ Die ausführliche Anleitung zu den Werkzeugen dieses Katalogs: wofür ein Werkze
 | `direction` | no | string | Name of a stop the user wants to head TOWARD („Richtung Wettbergen") — not a routing destination. The board keeps only departures heading that way, whether the named stop is the terminus or a stop downstream of the queried one. Matching is case-insensitive and area-prefix-tolerant. |
 | `extended` | no | boolean | `true` keeps the map data in the text: every stop's coordinate, the whole course of each run, and each departure's way (`pathOnMap`, `pathSource`, `additionalInfos.pathKind`) — for an application that DRAWS the board. It multiplies the answer. A chat client leaves it off. |
 | `format` | no | string | Answer serialisation: `"toon"` (default) or `"json"` — the detail is in `get_usage_guide`. **An agent leaves this out.** |
-| `id` | yes | string | Stop id to read the board of, as a DHID (`"de:03241:57"`; in Austria and Switzerland `at:…`/`ch:…`). Resolve the stop first — a name here is an argument error. |
+| `id` | yes | string | Stop id to read the board of, as the resolver hands it out: a DHID (`"de:03241:57"`, `at:…`, `ch:…`) or a station id (`"Parentch:1:sloid:3000"`). Resolve the stop first — a name here is an argument error. |
 | `is_arrival_time` | no | boolean | `true` reads `time` as an ARRIVAL time — the same as `arrival_departure = "arrivals"`. |
 | `last_of_window` | no | boolean | Which end of a `time_range_seconds` window to read: omitted or `false` the FIRST departures, `true` the LAST ones (the end-of-service question). An answer carrying `window_truncated: true` beside its board did NOT reach the window's end — its last entry is then not the last departure. Without a window it has no effect. |
 | `limit` | no | integer | Maximum number of departures, at least 1. Default 5, values above 15 are served as 15. |
@@ -313,7 +313,7 @@ Die ausführliche Anleitung zu den Werkzeugen dieses Katalogs: wofür ein Werkze
 | `no_change_at` | no | array | Halt-Ids wie `origin_id`, an denen keine Verbindung umsteigt. |
 | `not_via` | no | array | Halt-Ids wie `origin_id`, die keine Verbindung berührt. |
 | `only_lines` | no | array | Line whitelist. Entries are line tokens as printed on the vehicle (`"6"`, `"U3"`); a journey is kept only if every transit leg uses one of them. |
-| `origin_id` | no | string | Origin id. A DHID (`de:NNNNN:NNN`; in Austria and Switzerland `at:…`/`ch:…`) for a stop, otherwise the resolver's `main` id of the address or POI. Resolve the place first — a name here is an argument error. |
+| `origin_id` | no | string | Origin id: the resolver's `main` id as handed out — for a stop a DHID (`de:NNNNN:NNN`, `at:…`, `ch:…`) or a station id (`Parentch:1:sloid:3000`), else the address or POI id. Resolve the place first — a name here is an argument error. |
 | `origin_lat` | no | number | Origin latitude, WGS-84 decimal degrees — the fallback when no id is at hand, and the one retry worth making when resolved ids find nothing. |
 | `origin_lon` | no | number | Origin longitude. Goes with `origin_lat`. |
 | `origin_type` | no | string | What `origin_id` is: `"stop"` (default), `"address"` or `"poi"`. The backend resolves an address or a POI to its real name from the id. |
