@@ -18,6 +18,11 @@ The first entry records a change made before this file existed, and therefore
 carries the version the two servers were already published under. From the next
 entry on, the number moves with the rule above.
 
+## 2026-10-23 — TourismMCP 0.1.10
+
+- arguments changed: `expand_kg_pois`
+- description changed: `expand_kg_pois`
+
 ## 2026-10-20 — MobilityMCP 0.12.1
 
 - arguments changed: `connections`, `departures`, `show_connections`, `show_departures`, `show_connections_slim`
