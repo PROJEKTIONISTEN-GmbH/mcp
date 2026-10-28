@@ -93,7 +93,7 @@ carries sourced data repeats these notices machine-readably in its
 | OpenStreetMap | ODbL-1.0 (<https://www.openstreetmap.org/copyright>) | `© OpenStreetMap contributors` |
 | Curated tourism content — Niedersachsen-Hub, Deutsche Zentrale für Tourismus | per record (<https://www.germany.travel/>) | each record's own, in its `license` block |
 | Deutscher Wetterdienst | GeoNutzV (<https://www.dwd.de/DE/service/copyright/copyright_node.html>) | `Quelle: Deutscher Wetterdienst` |
-| PEGELONLINE — Wasserstraßen- und Schifffahrtsverwaltung des Bundes | DL-DE/Zero-2.0 (<https://www.pegelonline.wsv.de/gast/nutzungsbedingungen>) | nothing to name |
+| Bundesamt für Seeschifffahrt und Hydrographie (BSH), water level forecast | CC BY 4.0 (<https://creativecommons.org/licenses/by/4.0/>) | the BSH's own notice, in each tide answer's `attribution` |
 
 The curated row says *per record* for a reason: that collection bundles records
 under differing terms, and each hit carries its own notice — licence, rights
