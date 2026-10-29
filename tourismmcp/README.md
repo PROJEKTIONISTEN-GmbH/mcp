@@ -94,6 +94,8 @@ carries sourced data repeats these notices machine-readably in its
 | Curated tourism content — Niedersachsen-Hub, Deutsche Zentrale für Tourismus | per record (<https://www.germany.travel/>) | each record's own, in its `license` block |
 | Deutscher Wetterdienst | GeoNutzV (<https://www.dwd.de/DE/service/copyright/copyright_node.html>) | `Quelle: Deutscher Wetterdienst` |
 | Bundesamt für Seeschifffahrt und Hydrographie (BSH), water level forecast | CC BY 4.0 (<https://creativecommons.org/licenses/by/4.0/>) | the BSH's own notice, in each tide answer's `attribution` |
+| LGLN (Landesamt für Geoinformation und Landesvermessung Niedersachsen) — surface and terrain models, orthophotos, behind a tour's `shade` | CC BY 4.0 (<https://creativecommons.org/licenses/by/4.0/>) | `© LGLN <year>, CC BY 4.0`, in the `shade.licence` of each tour detail |
+| Meta / World Resources Institute, High-Resolution Canopy Height (Tolan et al. 2024) — a tour's `shade` outside Niedersachsen | CC BY 4.0 (<https://creativecommons.org/licenses/by/4.0/>) | `© Meta, World Resources Institute (Tolan et al. 2024), CC BY 4.0`, in `shade.sources` where it was used |
 
 The curated row says *per record* for a reason: that collection bundles records
 under differing terms, and each hit carries its own notice — licence, rights
