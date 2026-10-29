@@ -93,7 +93,7 @@ carries sourced data repeats these notices machine-readably in its
 | OpenStreetMap | ODbL-1.0 (<https://www.openstreetmap.org/copyright>) | `© OpenStreetMap contributors` |
 | Curated tourism content — Niedersachsen-Hub, Deutsche Zentrale für Tourismus | per record (<https://www.germany.travel/>) | each record's own, in its `license` block |
 | Deutscher Wetterdienst | GeoNutzV (<https://www.dwd.de/DE/service/copyright/copyright_node.html>) | `Quelle: Deutscher Wetterdienst` |
-| Bundesamt für Seeschifffahrt und Hydrographie (BSH), water level forecast | CC BY 4.0 (<https://creativecommons.org/licenses/by/4.0/>) | the BSH's own notice, in each tide answer's `attribution` |
+| Bundesamt für Seeschifffahrt und Hydrographie (BSH), water level forecast | CC BY 4.0 (<https://creativecommons.org/licenses/by/4.0/>) | `© Bundesamt für Seeschifffahrt und Hydrographie (BSH), CC BY 4.0. Das BSH übernimmt für die angegebenen Informationen keine Gewähr.`, in each tide answer's `attribution` |
 | LGLN (Landesamt für Geoinformation und Landesvermessung Niedersachsen) — surface and terrain models, orthophotos, behind a tour's `shade` | CC BY 4.0 (<https://creativecommons.org/licenses/by/4.0/>) | `© LGLN <year>, CC BY 4.0`, in the `shade.licence` of each tour detail |
 | Meta / World Resources Institute, High-Resolution Canopy Height (Tolan et al. 2024) — a tour's `shade` outside Niedersachsen | CC BY 4.0 (<https://creativecommons.org/licenses/by/4.0/>) | `© Meta, World Resources Institute (Tolan et al. 2024), CC BY 4.0`, in `shade.sources` where it was used |
 
