@@ -91,6 +91,8 @@ carries sourced data repeats these notices machine-readably in its
 | Source | Licence | Notice to pass on |
 |---|---|---|
 | OpenStreetMap | ODbL-1.0 (<https://www.openstreetmap.org/copyright>) | `© OpenStreetMap contributors` |
+| BKG (Bundesamt für Kartographie und Geodäsie), Verwaltungsgebiete 1:25 000 (VG25) — the official areas of Germany a place is named by | CC-BY-4.0 (<https://creativecommons.org/licenses/by/4.0/>) | `© BKG (2026) CC BY 4.0, Datenquellen: https://sgx.geodatenzentrum.de/web_public/gdz/datenquellen/datenquellen_vg25.pdf (Daten verändert)` |
+| BKG (Bundesamt für Kartographie und Geodäsie), Verwaltungsgebiete 1:250 000 mit Einwohnerzahlen (VG250-EW) — the population of those areas | DL-DE/BY-2.0 (<https://www.govdata.de/dl-de/by-2-0>) | `© BKG (2026) dl-de/by-2-0, Datenquellen: https://sgx.geodatenzentrum.de/web_public/gdz/datenquellen/datenquellen_vg_nuts.pdf (Daten verändert)` |
 | Curated tourism content — Niedersachsen-Hub, Deutsche Zentrale für Tourismus | per record (<https://www.germany.travel/>) | each record's own, in its `license` block |
 | Deutscher Wetterdienst | GeoNutzV (<https://www.dwd.de/DE/service/copyright/copyright_node.html>) | `Quelle: Deutscher Wetterdienst` |
 | Bundesamt für Seeschifffahrt und Hydrographie (BSH), water level forecast | CC BY 4.0 (<https://creativecommons.org/licenses/by/4.0/>) | `© Bundesamt für Seeschifffahrt und Hydrographie (BSH), CC BY 4.0. Das BSH übernimmt für die angegebenen Informationen keine Gewähr.`, in each tide answer's `attribution` |
