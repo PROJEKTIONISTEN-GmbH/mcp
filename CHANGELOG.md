@@ -18,6 +18,15 @@ The first entry records a change made before this file existed, and therefore
 carries the version the two servers were already published under. From the next
 entry on, the number moves with the rule above.
 
+## 2026-11-03 — TourismMCP 0.3.3
+
+- description changed: `search_tourism`
+
+## 2026-11-03 — MobilityMCP 0.16.0
+
+- arguments changed: `connections`, `show_connections`, `show_connections_slim`
+- description changed: `connections`
+
 ## 2026-10-31 — MobilityMCP 0.15.2
 
 - description changed: `connections`
