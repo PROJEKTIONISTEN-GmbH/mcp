@@ -18,6 +18,16 @@ The first entry records a change made before this file existed, and therefore
 carries the version the two servers were already published under. From the next
 entry on, the number moves with the rule above.
 
+## 2026-11-05 — MobilityMCP 0.16.1
+
+- arguments changed: `search_place`, `reverse_geocode`
+- description changed: `search_place`, `reverse_geocode`
+
+## 2026-11-05 — TourismMCP 0.3.4
+
+- arguments changed: `search_place`, `reverse_geocode`
+- description changed: `search_place`, `reverse_geocode`
+
 ## 2026-11-03 — TourismMCP 0.3.3
 
 - description changed: `search_tourism`
