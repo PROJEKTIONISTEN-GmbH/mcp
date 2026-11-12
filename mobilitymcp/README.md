@@ -105,6 +105,20 @@ carries sourced data repeats these notices machine-readably in its
 | Mobilitätsverbünde Österreich OG — the timetables of the Austrian transport associations | Datenlizenz Mobilitätsverbünde Österreich (<https://data.mobilitaetsverbuende.at/de/data-sets>) | `Datenquelle: Mobilitätsverbünde Österreich OG` |
 | opentransportdata.swiss — the Swiss timetable | Nutzungsbedingungen opentransportdata.swiss (<https://opentransportdata.swiss/de/terms-of-use/>) | `Datenquelle: opentransportdata.swiss` |
 | STA – Südtiroler Transportstrukturen AG — the timetable of South Tyrol, published by the Open Data Hub | CC0-1.0 (<https://gtfs.api.opendatahub.com/v1/dataset/sta-time-tables>) | `Datenquelle: STA – Südtiroler Transportstrukturen AG (Open Data Hub)` |
+| SkyAlps — the flights from Bolzano, published by the Open Data Hub | CC0-1.0 (<https://gtfs.api.opendatahub.com/v1/dataset/skyalps-flight-data>) | `Datenquelle: SkyAlps (Open Data Hub)` |
+| ummadum — the shared rides offered in South Tyrol, via Amarillo, published by the Open Data Hub | CC0-1.0 (<https://gtfs.api.opendatahub.com/v1/dataset/ummadumm-data>) | `Datenquelle: ummadum (Amarillo, Open Data Hub)` |
+| Administration des transports publics (Luxembourg) — the timetable of Luxembourg, published on data.public.lu | CC0-1.0 (<https://data.public.lu/en/datasets/horaires-et-arrets-des-transport-publics-netex/>) | `Datenquelle: Administration des transports publics Luxembourg (data.public.lu)` |
+| Rejseplanen A/S — the timetable of Denmark, from Denmark's national access point | CC-BY-4.0 (<https://creativecommons.org/licenses/by/4.0/>) | `Datenquelle: Rejseplanen A/S (Dataudveksleren), CC BY 4.0` |
+| Entur — the timetable of Norway with the national stop register | NLOD-2.0 (<https://data.norge.no/nlod/en/2.0>) | `Datenquelle: Entur (Norwegen), NLOD 2.0` |
+| PKP Polskie Linie Kolejowe S.A. — timetable, operation and disruptions of the railway in Poland | terms of the Open Railway Data API (<https://pdp-api.plk-sa.pl/api/v1/terms/html>) | `Datenquelle: PKP Polskie Linie Kolejowe S.A.` |
+| NMBS/SNCB — the railway in Belgium, via the open-data portal of the Belgian Mobility Company | CC-BY-4.0 (<https://creativecommons.org/licenses/by/4.0/>) | `Datenquelle: NMBS/SNCB – Open Data (Belgian Mobility Company), CC BY 4.0` with the date of the version (see below) |
+| STIB-MIVB — metro, tram and bus in Brussels, via the open-data portal of the Belgian Mobility Company | CC-BY-4.0 (<https://creativecommons.org/licenses/by/4.0/>) | `Datenquelle: STIB-MIVB – Open Data (Belgian Mobility Company), CC BY 4.0` with the date of the version (see below) |
+| De Lijn — bus and tram in Flanders, via the open-data portal of the Belgian Mobility Company | CC-BY-4.0 (<https://creativecommons.org/licenses/by/4.0/>) | `Datenquelle: De Lijn – Open Data (Belgian Mobility Company), CC BY 4.0` with the date of the version (see below) |
+| LETEC — bus in Wallonia, via the open-data portal of the Belgian Mobility Company | CC-BY-4.0 (<https://creativecommons.org/licenses/by/4.0/>) | `Datenquelle: LETEC – Open Data (Belgian Mobility Company), CC BY 4.0` with the date of the version (see below) |
+| Samtrafiken — the timetable and the stop register of Sweden, via Trafiklab | CC0-1.0 (<https://creativecommons.org/publicdomain/zero/1.0/>) | `Datenquelle: Trafiklab/Samtrafiken` |
+| OVapi — GTFS-NL, the timetable of the Netherlands | CC0-1.0 (<https://creativecommons.org/publicdomain/zero/1.0/>) | `Datenquelle: OVapi (GTFS-NL)` |
+| CIS JŘ (Ministry of Transport of the Czech Republic) — the timetables of Czechia | CC0-1.0 (<https://creativecommons.org/publicdomain/zero/1.0/>) | `Datenquelle: Ministerstvo dopravy ČR – CIS JŘ` |
+| Fluo Grand Est — the timetable of the Grand Est region: TER trains and buses, the interurban buses of the départements and the urban networks | Licence Ouverte 2.0 (<https://www.etalab.gouv.fr/licence-ouverte-open-licence/>) | `Datenquelle: Région Grand Est – Fluo Grand Est, Licence Ouverte 2.0` with the date of the version (see below) |
 | MobiData BW (Nahverkehrsgesellschaft Baden-Württemberg) | DL-DE/BY-2.0 (<https://www.mobidata-bw.de/>) | `Datenquelle: MobiData BW, Nahverkehrsgesellschaft Baden-Württemberg (NVBW)` |
 | Mobilitätsdatenmarktplatz go.Rheinland | per network (<https://mdd.gorheinland.com/>) | `Datenquelle: Mobilitätsdatenmarktplatz go.Rheinland` |
 | The operators of the GBFS feeds behind the sharing stock | per network (<https://gbfs.org/>) | each network's own — every station in an answer carries it |
@@ -114,6 +128,12 @@ carries sourced data repeats these notices machine-readably in its
 The two rows that say *per network* are the reason the notice travels in the
 answer rather than in this table: those sources bundle data under differing
 terms, and one blanket notice would be wrong for part of it.
+
+The rows that say *with the date of the version* are sources whose terms ask for
+the date of the data beside the notice. A ride of theirs carries that date in
+`dataSourceDate` (`YYYY-MM-DD`) beside its `dataSource`, and the answer's
+`attribution` — like the note in a map image — names the source with it:
+`<notice> – YYYY-MM-DD`.
 
 ## Support
 
