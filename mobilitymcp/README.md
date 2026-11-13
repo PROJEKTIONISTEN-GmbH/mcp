@@ -4,7 +4,7 @@
 
 <!-- summary:begin (generated) -->
 
-Public transport in Germany, Austria and Switzerland as one MCP tool set: journeys, departure boards and line courses, disruption reports, the place, address and time resolution they need, and a vicinity search that answers with nearby stops, places and sharing offers — the last of those with the free stock currently reported for them.
+Public transport in Germany and the countries around it — Austria, Switzerland, South Tyrol, Belgium, Denmark, Luxembourg, the Netherlands, Norway, Poland, Sweden and Czechia — as one MCP tool set: journeys, departure boards and line courses, disruption reports, the place, address and time resolution they need, and a vicinity search that answers with nearby stops, places and sharing offers — the last of those with the free stock currently reported for them.
 
 <!-- summary:end -->
 
@@ -20,23 +20,26 @@ Public transport in Germany, Austria and Switzerland as one MCP tool set: journe
 This matters more than the feature list, because an agent that does not know
 where the data ends invents the rest.
 
-* **Journeys, departures and line courses cover Germany, Austria, Switzerland
-  and South Tyrol.** They are planned on the timetables of all three countries
-  and of South Tyrol (the Italian province), long-distance and cross-border
-  services included — München to Bozen over the Brenner, for one. In Germany and
-  Switzerland, and on South Tyrol's buses, they come with real-time data —
-  delays, cancellations, platform changes, notices. In Austria and on South
-  Tyrol's trains they come from the timetable alone — **no real time**. Every
-  ride names its source, and each answer says when each source's timetable was
-  last updated. A place outside these regions — the rest of Italy included — is
-  not covered.
-* **Beyond the German border, `resolve_location` finds the places.** It resolves
-  stops, addresses and places in Austria, Switzerland and South Tyrol; `search_place`,
-  `reverse_geocode` and `nearby` search Germany only, and the sharing stock and
-  park-and-ride sites come from German feeds.
+* **Journeys, departures and line courses cover Germany and the countries around
+  it whose timetables are read:** Austria, Switzerland, South Tyrol (the Italian
+  province), Belgium, Denmark, Luxembourg, the Netherlands, Norway, Poland, Sweden
+  and Czechia — long-distance and cross-border services included, München to
+  Bozen over the Brenner or Aachen to Brussels. Real-time data — delays,
+  cancellations, platform changes, notices — comes where a source delivers it: in
+  Germany, Switzerland and on South Tyrol's buses, in Belgium, Denmark, the
+  Netherlands, Norway and Sweden. In Austria, Luxembourg, Poland, Czechia and on
+  South Tyrol's trains rides come from the timetable alone — **no real time**.
+  Every ride names its source, and each answer says when each source's timetable
+  was last updated. A place outside these countries — the rest of Italy included
+  — is not covered, and the answer says which countries are.
+* **Beyond the German border, the place tools find the places.** `resolve_location`,
+  `search_place` and `reverse_geocode` know the places of all these countries;
+  `nearby` searches Germany only, and the sharing stock and park-and-ride sites
+  come from German feeds.
 * **Disruption reports cover Lower Saxony, Bremen, Hamburg and Switzerland** —
-  Switzerland while its sources are current; elsewhere, Austria included, there
-  is no data behind this tool. An empty disruption answer outside those regions
+  Switzerland while its sources are current. Reports from Belgium, the
+  Netherlands, Norway and Sweden are read but placed nowhere, so a town there is
+  never cleared; elsewhere, Austria included, there is no data behind this tool. An empty disruption answer outside those regions
   **is not an all-clear** — every answer says in its own `coverage` field what
   it can speak for, and your agent should pass that on rather than read silence
   as "no disruptions".

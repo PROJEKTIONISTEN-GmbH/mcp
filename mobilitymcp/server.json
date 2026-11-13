@@ -2,8 +2,8 @@
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "eu.projektionisten/mobility",
   "title": "MobilityMCP",
-  "description": "Public transport in Germany, Austria and Switzerland (ÖPNV, Fahrplan): journeys, departures, lines.",
-  "version": "0.16.5",
+  "description": "Public transport in Germany and its neighbours (ÖPNV, Fahrplan): journeys, departures, lines.",
+  "version": "0.16.6",
   "websiteUrl": "https://ai.projektionisten.eu/mcp-landingpage/",
   "remotes": [
     {
