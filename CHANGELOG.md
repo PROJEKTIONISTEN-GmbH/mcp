@@ -18,6 +18,24 @@ The first entry records a change made before this file existed, and therefore
 carries the version the two servers were already published under. From the next
 entry on, the number moves with the rule above.
 
+## 2026-11-21 — MobilityMCP 0.16.8
+
+- arguments changed: `nearby`, `connections`, `departures`, `link_datetime`, `show_connections`, `show_departures`, `show_connections_slim`
+- description changed: `link_datetime`
+
+## 2026-11-21 — TourismMCP 0.3.7
+
+- arguments changed: `nearby`, `link_datetime`
+- description changed: `link_datetime`
+
+## 2026-11-20 — MobilityMCP 0.16.7
+
+- arguments changed: `resolve_location`, `nearby`
+
+## 2026-11-20 — TourismMCP 0.3.6
+
+- arguments changed: `resolve_location`, `nearby`
+
 ## 2026-11-13 — MobilityMCP 0.16.6
 
 - description changed: `connections`, `disruptions`

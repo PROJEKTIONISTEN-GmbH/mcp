@@ -3,7 +3,7 @@
   "name": "eu.projektionisten/mobility",
   "title": "MobilityMCP",
   "description": "Public transport in Germany and its neighbours (ÖPNV, Fahrplan): journeys, departures, lines.",
-  "version": "0.16.6",
+  "version": "0.16.8",
   "websiteUrl": "https://ai.projektionisten.eu/mcp-landingpage/",
   "remotes": [
     {
