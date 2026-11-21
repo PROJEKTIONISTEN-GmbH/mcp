@@ -191,7 +191,7 @@ Match-Mention gegen Caller-supplied Kandidaten-Vokabular. **When to use**: Calle
 
 | Argument | Required | Type | Description |
 |---|---|---|---|
-| `candidates` | yes | array | Candidate vocabulary the linker should pick from. REQUIRED — the backend rejects empty candidate lists with 400. |
+| `candidates` | yes | array | Candidate vocabulary the linker should pick from. REQUIRED — an empty list is an argument error. |
 | `text` | yes | string | Free-text mention to match against the caller-supplied candidate list. |
 
 ## Anleitung lesen — `get_usage_guide`
